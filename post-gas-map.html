@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Custom Markers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+    <style>
+	/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+<script>
+      var map ;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: new google.maps.LatLng(24.176697, 120.645623),         
+         mapTypeld:'roadmap'
+		 });
+		 
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+var icons = {
+post_office: {
+icon: iconBase + 'post_office_maps.png'
+},
+gas_stations: {
+icon: iconBase + 'gas_stations_maps.png'
+},
+info: {
+icon: iconBase + 'info-i_maps.png'
+}
+};
+
+var features = [
+{
+position: new google.maps.LatLng(24.175279, 120.649133),
+type: 'post_office'/*逢甲郵局*/
+},{
+position: new google.maps.LatLng(24.176728, 120.637648),
+type: 'post_office'/*西屯郵局*/
+},{
+position: new google.maps.LatLng(24.186786, 120.663629),
+type: 'post_office'/*中清路郵局*/
+},{
+position: new google.maps.LatLng(24.190484, 120.612215),
+type: 'post_office'/*永安郵局*/
+},{
+position: new google.maps.LatLng(24.179031, 120.601644),
+type: 'post_office'/*東海大學郵局*/
+},{
+position: new google.maps.LatLng(24.183967, 120.604836),
+type: 'post_office'/*榮總郵局*/
+},{
+position: new google.maps.LatLng(24.169477, 120.606562),
+type: 'post_office'/*工業區郵局*/
+},{
+position: new google.maps.LatLng(24.177526, 120.669698),
+type: 'post_office'/*水湳郵局*/
+},{
+position: new google.maps.LatLng(24.186787, 120.663628),
+type: 'post_office'/*中清路郵局*/
+},{
+position: new google.maps.LatLng(24.171624, 120.688531),
+type: 'post_office'/*文心路郵局*/
+},{
+position: new google.maps.LatLng(24.156534, 120.652868),
+type: 'post_office'/*大隆路郵局*/
+},{
+position: new google.maps.LatLng(24.166977, 120.671303),
+type: 'post_office'/*漢口路郵局*/
+},{
+position: new google.maps.LatLng(24.153491, 120.633102),
+type: 'post_office'/*黎明郵局*/
+},{
+position: new google.maps.LatLng(24.172088, 120.643931),
+type: 'gas_stations'/*中油河南站*/
+},{
+position: new google.maps.LatLng(24.171328, 120.654064),
+type: 'gas_stations'/*中油青海站*/
+},{
+position: new google.maps.LatLng(24.179368, 120.634394),
+type: 'gas_stations'/*台塑石油環中站*/
+},{
+position: new google.maps.LatLng(24.182372, 120.633626),
+type: 'gas_stations'/*全國加油站*/
+},{
+position: new google.maps.LatLng(24.180124, 120.632491),
+type: 'gas_stations'/*台灣中油光鳳站*/
+},{
+position: new google.maps.LatLng(24.162789, 120.650083),
+type: 'gas_stations'/*中油文心站*/
+},{
+position: new google.maps.LatLng(24.161805, 120.650519),
+type: 'gas_stations'/*北基加油站中港站*/
+},{
+position: new google.maps.LatLng(24.173834, 120.659999),
+type: 'gas_stations'/*台亞石油*/
+},{
+position: new google.maps.LatLng(24.170542, 120.632087),
+type: 'gas_stations'/*台塑朝馬站*/
+},{
+position: new google.maps.LatLng(24.183710, 120.629854),
+type: 'gas_stations'/*福懋加油站*/
+}
+];
+// Create markers.
+features.forEach(function(feature) {
+var marker = new google.maps.Marker({
+position: feature.position,
+icon: icons[feature.type].icon,
+map: map
+});
+});
+      }
+
+    </script>
+    <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8KFLoQMnmCh6OWeF-HBPNLsZiwZQNs_Y&callback=initMap">
+    </script>
+  </body>
+</html>
